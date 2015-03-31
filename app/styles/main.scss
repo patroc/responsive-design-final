@@ -6,11 +6,14 @@
 @import '../../bower_components/bourbon/dist/_bourbon.scss';
 @import '../../bower_components/neat/app/assets/stylesheets/_neat.scss';
 
+/*
 
-/*// target ÷ context = result
-// 78px ÷ 24px = 3.25
-// 15px  ÷ 24px = 0.625
-// 320px ÷ 960px = .3333333 * 100 = 33.333333 %*/
+// target ÷ context = result
+// 78px ÷ 24px = 3.25 %
+// 15px  ÷ 24px = 0.625 %
+// 320px ÷ 960px = .3333333 * 100 = 33.333333 %
+
+******/
 
 
 /*****************************************************************************
@@ -29,11 +32,23 @@ html {
 }
 
 h1 {
-	font-size:3.25em;
+	font-size:em(50);
 }
 
 body {
 	margin:0px;
+	height: em(1800);
+	background-color: #18ecbc;
+/*	background-image: url(http://images.all-free-download.com/images/graphiclarge/linen_fabric_background_04_hd_picture_169825.jpg);
+	background-repeat: repeat;
+*/}
+
+.main-banner {
+	background-image: url(http://onepagelove.com/wp-content/uploads/gravity_forms/1-e6fef9602ee538adb7069defe12f9dc0/2013/05/foliobig.png);
+	width: 100%;
+	background-size: 100%;
+	height: em(200);
+	background-repeat: no-repeat;
 }
 
 
@@ -41,55 +56,95 @@ body {
   Layout Styles
 ******************************************************************************/
 
+
+
 .container {
 	overflow: auto;
 	margin:0 auto;
+	padding:0 10% 0;
+}
+
+.subcontainer {
+	display: block;
+	margin: 0 auto 0;
+	overflow: auto;
+	width: auto;
+}
+
+.news {
+	display: inline-block;
+	width:100%;
+	padding:1.5em;
+	background-color: rgba(#000, .1);
+
+}
+
+
+@media screen and ( max-width: 550px ) {
+.hero {
+	display: none;
+}
+
+}
+
+
+@media screen and ( min-width: 551px ) and ( max-width: 999px) {
+
+.main-banner {
+	height: em(400);
+}
+.hero h1 {
+	text-align: center;
+	font-size: em(80);
 }
 
 .news {
 	float: left;
-	width:100%;
-	padding:1.5em;
-	background-color: lightgreen;
+	width: 50%;
+
 }
 
-
-
-
-@media screen and ( min-width: 500px ) {
-
-	.news {
-		float: left;
-		width: 50%;
-		background-color: beige;
-	}
-
-
-	html {
-		font-size: 18px;
-	}
+html {
+	font-size: 18px;
+}
 }
 
-@media screen and ( min-width: 1000px) {
+@media screen and ( min-width: 1000px) and (max-width: 1499px) {
+
+
+	.main-banner {
+	height: em(500);
+}
 	
-	.news {
-		width: 33.33333%;
-		
-	}
+.news {
+	width: 33.33333%;
+	
+	
+}
+
+
+html {
+	font-size: 20px;
+}
+
 }
 
 @media screen and ( min-width: 1500px) {
 	
-	.news {
-		width: 25%;
-		
-	}
+.news {
+	width: 25%;
+	
+}
+
+	.main-banner {
+	height: em(700);
+}
+
 }
 
 /*****************************************************************************
   Module Styles
 ******************************************************************************/
-
 
 .header-image {
 	width: 100%;
